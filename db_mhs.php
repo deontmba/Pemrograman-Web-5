@@ -53,7 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST['email'];
         
         if ($action == "insert") {
-            // Insert data
             $sql = "INSERT INTO identitas (npm, nama, alamat, tgl_lhr, jk, email)
                     VALUES ('$npm', '$nama', '$alamat', '$tgl_lhr', '$jk', '$email')";
 
@@ -63,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
         } elseif ($action == "update") {
-            // Update data
             $sql = "UPDATE identitas SET nama='$nama', alamat='$alamat', tgl_lhr='$tgl_lhr', jk='$jk', email='$email'
                     WHERE npm='$npm'";
 
@@ -74,7 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     } elseif ($action == "tampil") {
-        // Display data
         $sql = "SELECT npm, nama, alamat, tgl_lhr, jk, email FROM identitas";
         $result = $conn->query($sql);
 
